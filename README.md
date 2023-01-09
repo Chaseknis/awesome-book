@@ -123,11 +123,11 @@ Download the repo.
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Wai Yan Phyo**
 
 - GitHub: [@oyhpnayiaw](https://github.com/oyhpnayiaw)
 
-👤 **Author2**
+👤 **Kehinde Audu**
 
 - GitHub: [@audukehinde](https://github.com/audukehinde)
 
@@ -139,11 +139,11 @@ Download the repo.
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **Use Css**
+- [ ] **Add footer and nav**
+- [ ] **Make new pages**
+- [ ] **Change to SPA**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -167,25 +167,9 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+I would like to thank
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -194,7 +178,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

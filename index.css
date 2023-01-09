@@ -11,12 +11,6 @@ form {
   gap: 16px;
 }
 
-/* form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 input {
   width: 270px;
   height: 30px;
