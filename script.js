@@ -2,6 +2,13 @@ let books = JSON.parse(localStorage.getItem('books')) ?? [];
 
 const booksEl = document.getElementById('books');
 
+const remove = (e) => {
+  const index = Array.from(booksEl.children).indexOf(e.parentNode);
+  e.parentNode.remove();
+  books = books.filter((_, i) => index !== i);
+  localStorage.setItem('books', JSON.stringify(books));
+};
+
 const addBook = (book) => {
   const bookDiv = document.createElement('div');
   const titleDiv = document.createElement('div');
@@ -13,9 +20,7 @@ const addBook = (book) => {
   const btn = document.createElement('button');
   btn.innerText = 'Remove';
 
-  btn.onclick = () => {
-    remove(btn);
-  };
+  btn.onclick = () => remove(btn);
 
   const hr = document.createElement('hr');
 
@@ -40,12 +45,3 @@ form.addEventListener('submit', (e) => {
 
   localStorage.setItem('books', JSON.stringify(books));
 });
-
-const remove = (e) => {
-  const index = Array.from(booksEl.children).indexOf(e.parentNode);
-  e.parentNode.remove();
-  books = books.filter((_, i) => {
-    return index != i;
-  });
-  localStorage.setItem('books', JSON.stringify(books));
-};
