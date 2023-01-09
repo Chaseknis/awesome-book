@@ -15,20 +15,16 @@ class AwesomeBook {
 
   addBook = (book) => {
     const bookDiv = document.createElement('div');
-    const titleDiv = document.createElement('div');
-    titleDiv.innerHTML = book.title;
-
-    const authorDiv = document.createElement('div');
-    authorDiv.innerHTML = book.author;
+    bookDiv.className = 'book-container';
+    const bookTitle = document.createElement('div');
+    bookTitle.innerHTML = `${book.title} by ${book.author}`;
 
     const btn = document.createElement('button');
     btn.innerText = 'Remove';
 
     btn.onclick = () => this.remove(btn);
 
-    const hr = document.createElement('hr');
-
-    bookDiv.append(titleDiv, authorDiv, btn, hr);
+    bookDiv.append(bookTitle, btn);
 
     booksEl.insertAdjacentElement('afterbegin', bookDiv);
   };
