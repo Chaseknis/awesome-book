@@ -1,3 +1,50 @@
 * {
   box-sizing: border-box;
 }
+
+body,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input {
+  width: 270px;
+  height: 30px;
+  padding: 10px;
+  outline: none;
+}
+
+.btn-submit {
+  padding: 6px 20px;
+}
+
+#books {
+  border: 2px solid black;
+}
+
+.line {
+  background-color: black;
+  height: 2px;
+  width: 50px;
+  margin-top: 16px;
+}
+
+.book-container {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+}
+
+.book-container:nth-child(odd) {
+  background-color: rgb(152, 152, 167);
+}
+
+.book-container div {
+  flex: 1;
+}
