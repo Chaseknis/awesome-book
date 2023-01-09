@@ -13,6 +13,10 @@ const addBook = (book) => {
   const btn = document.createElement('button');
   btn.innerText = 'Remove';
 
+  btn.onclick = () => {
+    remove(btn);
+  };
+
   const hr = document.createElement('hr');
 
   bookDiv.append(titleDiv, authorDiv, btn, hr);
@@ -36,3 +40,8 @@ form.addEventListener('submit', (e) => {
 
   localStorage.setItem('books', JSON.stringify(books));
 });
+
+const remove = (e) => {
+  console.log(e.parentNode);
+  e.parentNode.remove();
+};
