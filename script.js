@@ -1,36 +1,65 @@
-const booksEl = document.getElementById('books');
+/** @typedef {{ author:string, title:string }} Book  */
 
 class AwesomeBook {
+  /** @type {Book[]} */
+  #bookCollection;
+
   constructor() {
-    this.books = JSON.parse(localStorage.getItem('books')) ?? [];
-    if (this.books) [...this.books].reverse().forEach(this.addBook);
+    this.#bookCollection = JSON.parse(localStorage.getItem('books')) ?? [];
+    this.#bookCollection.forEach((e) => this.#insertBookToDOM(e, 'beforeend'));
   }
 
-  remove = (e) => {
-    const index = Array.from(booksEl.children).indexOf(e.parentNode);
-    e.parentNode.remove();
-    this.books = this.books.filter((_, i) => index !== i);
-    localStorage.setItem('books', JSON.stringify(this.books));
+  /**
+   * Insert {book} into first element of an {#bookCollection} array
+   * and first position in div#books
+   *
+   * @param {Book} book - Book Data
+   * */
+  insert = (book) => {
+    this.#bookCollection.unshift(book); // add new book on first index of the books array
+    this.#insertBookToDOM(book);
+    this.#save();
   };
 
-  addBook = (book) => {
+  /**
+   * Save bookCollection array into localStorage
+   * */
+  #save = () => {
+    localStorage.setItem('books', JSON.stringify(this.#bookCollection));
+  };
+
+  /**
+   * @param {Book} book - Book Data
+   * @param {InsertPosition} where - location of where to insert book object into #books div
+   * */
+  #insertBookToDOM = (book, where = 'afterbegin') => {
     const bookDiv = document.createElement('div');
     bookDiv.className = 'book-container';
+
     const bookTitle = document.createElement('div');
     bookTitle.innerHTML = `${book.title} by ${book.author}`;
 
     const btn = document.createElement('button');
     btn.innerText = 'Remove';
-
-    btn.onclick = () => this.remove(btn);
+    btn.onclick = () => this.#remove(btn);
 
     bookDiv.append(bookTitle, btn);
 
-    booksEl.insertAdjacentElement('afterbegin', bookDiv);
+    document.getElementById('books').insertAdjacentElement(where, bookDiv);
   };
 
-  prepend = (book) => {
-    this.books.unshift(book);
+  /**
+   * Remove parentNode - div.book-container from DOM and also remove from the bookCollection
+   *
+   * @param {Node} btn - Remove button node
+   * */
+  #remove = (btn) => {
+    const root = btn.parentNode;
+    const index = Array.from(root.parentNode.children).indexOf(root);
+    root.parentNode.removeChild(root); // remove book element from #books Node
+
+    this.#bookCollection.splice(index, 1); // remove book object from array
+    this.#save();
   };
 }
 
@@ -39,14 +68,10 @@ const awesomeBook = new AwesomeBook();
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const bookEle = e.target.elements;
-  const title = bookEle[0].value;
-  const author = bookEle[1].value;
-
-  const book = { author, title };
-
-  awesomeBook.prepend(book);
-  awesomeBook.addBook(book);
-
-  localStorage.setItem('books', JSON.stringify(awesomeBook.books));
+  const [titleInput, authorInput] = e.target.elements;
+  awesomeBook.insert({
+    author: authorInput.value,
+    title: titleInput.value,
+  });
+  e.target.reset();
 });
