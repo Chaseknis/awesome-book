@@ -75,3 +75,31 @@ form.addEventListener('submit', (e) => {
   });
   e.target.reset();
 });
+
+// handle nav buttons
+const navBtns = document.querySelectorAll('.nav-button');
+
+navBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const text = e.currentTarget.innerText;
+    document.body.className = `show-${text.toLowerCase().replace(' ', '-')}`;
+  });
+});
+
+// Update time element every second
+const options = {
+  year: 'numeric',
+  month: 'long',
+  weekday: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  hour12: true,
+};
+
+const timeEl = document.querySelector('time');
+
+setInterval(() => {
+  timeEl.innerText = new Date().toLocaleDateString('en-US', options);
+}, 1000);
