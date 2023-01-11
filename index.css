@@ -1,14 +1,58 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body,
-form {
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+form,
+main,
+.form-section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   gap: 16px;
+}
+
+header a {
+  text-decoration: none;
+  color: #000;
+  font-size: 22px;
+}
+
+header,
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+header ul li button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+header ul li:nth-child(2) {
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  padding: 0 10px;
+}
+
+main {
+  padding: 10px 10px;
+}
+
+main time {
+  align-self: flex-end;
 }
 
 input {
@@ -18,23 +62,24 @@ input {
   outline: none;
 }
 
+header ul li {
+  list-style: none;
+  text-decoration: none;
+}
+
 .btn-submit {
-  padding: 6px 20px;
+  padding: 4px 12px;
+  align-self: flex-end;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 #books {
+  width: 100%;
   border: 2px solid black;
 }
 
-.line {
-  background-color: black;
-  height: 2px;
-  width: 50px;
-  margin-top: 16px;
-}
-
 .book-container {
-  width: 500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,4 +92,27 @@ input {
 
 .book-container div {
   flex: 1;
+}
+
+.border-box {
+  padding: 8px 16px;
+  margin: 8px;
+  background-color: rgb(194, 194, 194);
+}
+
+.content {
+  height: 100%;
+  /* width: 100%; */
+}
+
+.all-book-section {
+  width: 100%;
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: 44px;
+}
+footer {
+  text-align: center;
 }
