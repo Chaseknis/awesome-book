@@ -71,8 +71,6 @@ HTML, CSS, JAVASCRIPT
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **ADD BOOK**
 - **REMOVE BOOK**
 - **LOCAL STORAGE**
@@ -83,7 +81,7 @@ HTML, CSS, JAVASCRIPT
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- NONE
+- [Live Demo](https://oyhpnayiaw-as-micronaut.github.io/awesome-book/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,12 +134,7 @@ Download the repo.
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **Add footer and nav**
-- [ ] **Make new pages**
-- [ ] **Change to SPA**
+-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,8 +161,6 @@ If you like this project...
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
