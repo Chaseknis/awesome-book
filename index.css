@@ -60,6 +60,7 @@ main {
 
 main time {
   align-self: flex-end;
+  height: 20px;
 }
 
 input {
@@ -83,6 +84,15 @@ input {
 
 #books:empty {
   border-color: transparent;
+}
+
+#no-book-text {
+  display: none;
+  text-align: center;
+}
+
+#books:empty + #no-book-text {
+  display: block;
 }
 
 .book-container {
