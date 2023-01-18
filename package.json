@@ -1,11 +1,10 @@
 {
-  "name": "html-css-js-template",
+  "name": "awesome-book",
   "version": "1.0.0",
-  "description": "HTML,CSS & JS template for Microverse. All linters and readme file included.",
+  "description": "Awesome Book app",
   "main": "index.html",
   "scripts": {
-    "linters": "yarn hint . && yarn run-stylelint && yarn eslint .",
-    "run-stylelint": "stylelint \"**/*.css\""
+    "linters": "hint . && stylelint \"**/*.css\" && eslint ."
   },
   "keywords": [
     "Microverse"
